@@ -1,6 +1,6 @@
 module LetterAvatar
   module Colors
-    PALETTES = [:google, :iwanthue]
+    PALETTES = [:google, :iwanthue, :synced]
 
     GOOGLE_COLORS = [
       [226, 95, 81], # A
@@ -250,6 +250,16 @@ module LetterAvatar
       [126, 169, 36]
     ].freeze
 
+    SYNCED_COLORS = [
+      [135, 149, 169],
+      [183, 178, 165],
+      [160, 80, 84],
+      [105, 99, 105],
+      [129, 112, 135],
+      [113, 82, 86],
+      [203,185,164]
+    ]
+
     def self.for(username)
       public_send("with_#{LetterAvatar.colors_palette}", username)
     end
@@ -288,6 +298,10 @@ module LetterAvatar
     #   - L: 0.75 - 1.5
     def self.iwanthue
       IWANTHUE_COLORS
+    end
+
+    def self.synced
+      SYNCED_COLORS
     end
   end
 end
