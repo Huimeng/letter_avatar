@@ -284,6 +284,10 @@ module LetterAvatar
       end
     end
 
+    def self.with_synced(username)
+      synced[Digest::MD5.hexdigest(username)[0...15].to_i(16) % synced.length]
+    end
+
     # Colors form Google Inbox
     # https://inbox.google.com
     def self.google
